@@ -71,7 +71,7 @@ AC_OUTPUT
 
 Then run `autoconf` in the folder where `configure.ac` is saved. Copy the `configure` file to the package root.
 
-# Travis CI
+## Travis CI
 
 A basic `.travis.yml` file:
 ```
@@ -111,4 +111,36 @@ r_binary_packages:
 after_success:
   - tar -C .. -xf $PKG_TARBALL
 - Rscript -e 'covr::codecov()'
+```
+
+## codecov
+
+Go to the codecov site, turn the repo on, get the token. Add the `codecov.yml` file:
+
+```
+comment: false
+
+coverage:
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 1%
+    patch:
+      default:
+        target: auto
+        threshold: 1%
+
+language: R
+sudo: false
+cache: packages
+after_success:
+- Rscript -e 'covr::codecov()'
+```
+
+Go to R and run:
+```
+install.packages("covr")
+library(covr)
+codecov(token = "YOUR_TOKEN_GOES_HERE")
 ```
