@@ -95,7 +95,7 @@ For most cases, the following is enough:
 #!/bin/sh
 
 rm -f config.* src/Makevars
-
+```
 
 ## Travis CI
 
