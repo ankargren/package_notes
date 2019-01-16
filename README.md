@@ -88,6 +88,15 @@ AC_OUTPUT
 
 Then run `autoconf` in the folder where `configure.ac` is saved. Copy the `configure` file to the package root.
 
+## cleanup file
+
+For most cases, the following is enough:
+```
+#!/bin/sh
+
+rm -f config.* src/Makevars
+
+
 ## Travis CI
 
 A basic `.travis.yml` file:
