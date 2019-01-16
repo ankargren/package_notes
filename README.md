@@ -7,14 +7,16 @@ Some things I tend to forget.
 ```
 ^.*\.Rproj$
 ^\.Rproj\.user$
-README.rmd
-README_cache/
-codecov.yml
-README.md
-cran-comments.md
-man-roxygen
-\.travis.yml
-_config.yml
+^README.rmd$
+^README_cache$
+^codecov.yml$
+^README.md$
+^cran-comments.md$
+^man-roxygen$
+^\.travis.yml$
+^config.yml$
+^docs$
+^README_files$
 ```
 
 ## configure file
