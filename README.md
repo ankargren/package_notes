@@ -1,4 +1,21 @@
-# package_notes
+# Package notes
+
+Some things I tend to forget.
+
+## .Rbuildignore
+
+```
+^.*\.Rproj$
+^\.Rproj\.user$
+README.rmd
+README_cache/
+codecov.yml
+README.md
+cran-comments.md
+man-roxygen
+\.travis.yml
+_config.yml
+```
 
 ## configure file
 
