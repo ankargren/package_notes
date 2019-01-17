@@ -88,7 +88,7 @@ AC_CONFIG_FILES([src/Makevars])
 AC_OUTPUT
 ```
 
-Then run `autoconf` in the folder where `configure.ac` is saved. Copy the `configure` file to the package root.
+Then run `autoconf` in the folder where `configure.ac` is saved. Copy the `configure` file to the package root. If it doesn't show up as an executable, run `chmod +x ~/path/to/file`.
 
 ## Makevars.in
 
