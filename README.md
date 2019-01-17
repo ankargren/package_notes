@@ -90,6 +90,24 @@ AC_OUTPUT
 
 Then run `autoconf` in the folder where `configure.ac` is saved. Copy the `configure` file to the package root.
 
+## Makevars.in
+
+The `Makevars.in` file that goes with the `configure` script is:
+```
+CXX_STD = CXX11
+PKG_CXXFLAGS = @OPENMP_FLAG@ -I../inst/include
+PKG_LIBS = @OPENMP_FLAG@ $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
+```
+(Note: Having `@OPENMP_CFLAG@` in `PKG_LIBS` is frowned upon by CRAN, C and C++ flags should not be mixed.)
+
+## Makevars
+
+```
+CXX_STD = CXX11
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -I../inst/include
+PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
+```
+
 ## cleanup file
 
 For most cases, the following is enough:
