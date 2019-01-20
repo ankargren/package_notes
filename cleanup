@@ -1,0 +1,14 @@
+#!/bin/sh
+
+rm -f  config.log config.status confdefs.h \
+       src/*.o src/*.so src/symbols.rds \
+       vignettes/*.blg \
+       vignettes/*.bbl \
+       vignettes/*.xwm \
+       vignettes/*~ \
+       */*~ *~ \
+       src/Makevars \
+       vignettes/jss.bst vignettes/pinp.cls
+
+rm -rf autom4te.cache/ \
+vignettes/auto/
