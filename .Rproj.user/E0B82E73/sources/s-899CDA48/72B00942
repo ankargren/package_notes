@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1547986357787.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "72B00942",
+    "lastKnownWriteTime" : 1547986365,
+    "last_content_update" : 1547986365486,
+    "path" : "~/Box Sync/R/template/src/Makevars.win",
+    "project_path" : "src/Makevars.win",
+    "properties" : {
+        "cursorPosition" : "13,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "makefile"
+}
