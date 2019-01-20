@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1547987770693.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1434275955",
+    "id" : "9FEB7A42",
+    "lastKnownWriteTime" : 1547987756,
+    "last_content_update" : 1547987756,
+    "path" : "~/Box Sync/R/template/src/RcppExports.cpp",
+    "project_path" : "src/RcppExports.cpp",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}
