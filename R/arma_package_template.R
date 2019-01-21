@@ -57,8 +57,7 @@ arma_package_template <- function(name="anRpackage",
   }
   skeleton <- system.file("skeleton", package="skeleton")
 
-  for (file_name in c("Makevars.in", "Makevars.win", "configure", "configure.ac", "cleanup",
-                      ".travis.yml", "codecov.yml", ".Rbuildignore", "rcpparma_hello_world.cpp")) {
+  for (file_name in c("Makevars.in", "Makevars.win", "rcpparma_hello_world.cpp")) {
     dest <- file.path(src, file_name)
     if (!file.exists(dest)) {
       file.copy(file.path(skeleton, file_name), dest)
@@ -99,7 +98,6 @@ arma_package_template <- function(name="anRpackage",
   header <- readLines(file.path(src, "rcpparma_hello_world.cpp"))
   header <- gsub("@PKG@", name, header, fixed = TRUE)
   writeLines(header, file.path(src, "rcpparma_hello_world.cpp"))
-
 
 
   invisible(NULL)
