@@ -1,8 +1,22 @@
 # Package notes
 
-Some things I tend to forget.
+Some things I tend to forget when creating a fresh package with RcppArmadillo, header files and Travis CI and codecov enabled. 
 
-## .Rbuildignore
+## Installation
+
+To create a package called `my_pkg`:
+```
+devtools::install_github("ankargren/package_notes")
+skeleton::arma_package_template(name = "my_pkg", 
+                                path = "~/Desktop")
+```
+Next, go to `Tools -> Project options -> Build tools` and add `--clean` to the `Build and Reload` field. (This enables a run of the `cleanup` file after the package has been installed, which removes unnecessary auxiliary files.)
+
+## Documentation
+
+The files that the template package uses can be found in the `inst` folder here on GitHub. They are also documented below (with slight modifications).
+
+### .Rbuildignore
 
 ```
 ^.*\.Rproj$
@@ -19,7 +33,7 @@ Some things I tend to forget.
 ^README_files$
 ```
 
-## configure file
+### configure file
 
 Change `PKG_NAME` and `PKG_VERSION` in the following `configure.ac`:
 ```
@@ -90,7 +104,7 @@ AC_OUTPUT
 
 Then run `autoconf` in the folder where `configure.ac` is saved. Copy the `configure` file to the package root. If it doesn't show up as an executable, run `chmod +x ~/path/to/file`.
 
-## Makevars.in
+### Makevars.in
 
 The `Makevars.in` file that goes with the `configure` script is:
 ```
@@ -100,7 +114,7 @@ PKG_LIBS = @OPENMP_FLAG@ $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
 ```
 (Note: Having `@OPENMP_CFLAG@` in `PKG_LIBS` is frowned upon by CRAN, C and C++ flags should not be mixed.)
 
-## Makevars
+### Makevars
 
 ```
 CXX_STD = CXX11
@@ -108,7 +122,7 @@ PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -I../inst/include
 PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
 ```
 
-## cleanup file
+### cleanup file
 
 For most cases, the following is enough:
 ```
@@ -117,7 +131,7 @@ For most cases, the following is enough:
 rm -f config.* src/Makevars
 ```
 
-## Travis CI
+### Travis CI
 
 A basic `.travis.yml` file:
 ```
@@ -159,7 +173,7 @@ after_success:
 - Rscript -e 'covr::codecov()'
 ```
 
-## codecov
+### codecov
 
 Go to the codecov site, turn the repo on, get the token. Add the `codecov.yml` file:
 

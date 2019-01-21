@@ -1,0 +1,12 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README.rmd$
+^README_cache$
+^codecov.yml$
+^README.md$
+^cran-comments.md$
+^man-roxygen$
+^\.travis.yml$
+^config.yml$
+^docs$
+^README_files$

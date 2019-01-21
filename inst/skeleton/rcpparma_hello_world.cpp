@@ -1,4 +1,4 @@
-#include "template.h"
+#include "@PKG@.h"
 
 // [[Rcpp::export]]
 arma::mat rcpparma_hello_world() {
