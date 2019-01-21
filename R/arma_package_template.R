@@ -66,7 +66,7 @@ arma_package_template <- function(name="anRpackage",
   }
 
   for (file_name in c("configure", "configure.ac", "cleanup",
-                      ".travis.yml", "codecov.yml", ".Rbuildignore")) {
+                      ".travis.yml", "codecov.yml", ".Rbuildignore", ".gitignore")) {
     dest <- file.path(root, file_name)
     if (!file.exists(dest)) {
       file.copy(file.path(skeleton, file_name), dest)
@@ -98,7 +98,13 @@ arma_package_template <- function(name="anRpackage",
   header <- readLines(file.path(src, "rcpparma_hello_world.cpp"))
   header <- gsub("@PKG@", name, header, fixed = TRUE)
   writeLines(header, file.path(src, "rcpparma_hello_world.cpp"))
-
+  
+  if (file.exists(file.path(root, "R", sprintf("%s-internal.R", name)))) {
+    file.remove(file.path(root, "R", sprintf("%s-internal.R", name)))
+  }
+  
+  Rcpp::compileAttributes(root)
+  message(" >> invoked Rcpp::compileAttributes to create wrappers")
 
   invisible(NULL)
 }
